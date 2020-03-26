@@ -71,34 +71,6 @@
             "varType": 0
         },
         {
-            "id": "c640d63c-8e3c-42a5-bb4e-588535b59358",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "x_vel",
-            "varType": 0
-        },
-        {
-            "id": "d33a0f8d-6537-47ed-9cf4-12412515a3c4",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "y_vel",
-            "varType": 0
-        },
-        {
             "id": "2fb9b308-a254-4127-99bc-046ccf8c102e",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -122,22 +94,8 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "150",
+            "value": "25",
             "varName": "respawn_timer",
-            "varType": 0
-        },
-        {
-            "id": "3935dc1b-f8e2-42ec-acea-a7cee086b007",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "100",
-            "varName": "respawn_time",
             "varType": 0
         },
         {
