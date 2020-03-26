@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-event_inherited();
 
 x_spd = 3;
 
@@ -23,4 +22,10 @@ if(place_meeting(x, y, obj_pB)){
 
 if(y_spd < 0){
 	sprite_index = spr_playerA_up;
+} else if(y_spd > 0){
+	sprite_index = spr_playerA_down;
+} else {
+	sprite_index = spr_playerA;
 }
+
+event_inherited();
