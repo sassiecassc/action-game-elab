@@ -111,6 +111,20 @@
             "value": "0.9",
             "varName": "x_accel",
             "varType": 0
+        },
+        {
+            "id": "f66774e0-14ec-4a9a-8330-e292f455d9a7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "player_collide",
+            "varType": 3
         }
     ],
     "solid": false,
