@@ -80,7 +80,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "0.2",
+            "value": "0.3",
             "varName": "grav",
             "varType": 0
         },
@@ -94,8 +94,22 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "-6",
+            "value": "-12",
             "varName": "jump_spd",
+            "varType": 0
+        },
+        {
+            "id": "f2a19b36-8c86-4e51-ba26-477cc07c1a7a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0.9",
+            "varName": "x_accel",
             "varType": 0
         }
     ],

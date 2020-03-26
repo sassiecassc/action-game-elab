@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_xscale = 2.75;
-image_yscale = 2.75;
+image_xscale = 3.25;
+image_yscale = 3.25;
 
 //change x pos of player using spd variable
 //x += x_spd;
