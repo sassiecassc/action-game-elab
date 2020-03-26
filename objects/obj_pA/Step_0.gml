@@ -14,8 +14,7 @@ if(keyboard_check(vk_right)){
 
 //collision with other player
 if(place_meeting(x, y, obj_pB)){
-	show_debug_message("i am colliding")
-	//x_spd *= -1;
+	x += x_spd;
 	x_spd = 0;
 }
 
