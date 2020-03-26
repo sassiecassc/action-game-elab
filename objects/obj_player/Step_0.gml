@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_xscale = 3;
-image_yscale = 3;
+image_xscale = 2.75;
+image_yscale = 2.75;
 
 //change x pos of player using spd variable
 //x += x_spd;
@@ -12,17 +12,23 @@ y += y_spd;
 y_spd += grav;
 
 
+if(y_spd > 0){
+	if(place_meeting(x, y, obj_platform)){
+		y_spd = jump_spd;
+	}
+}
 
-//collision with cloud
+/*
+//collision with bush
 var new_y;
 //collide only if player is going down
 if(y_spd > 0){ //if the player is moving down vertically (positive)
 	for(var dist_moved = 0; dist_moved < y_spd; dist_moved++){ //creating a for loop; dist_moved
 		new_y = y+dist_moved; //move 1 pixel at a time
 		var collidewith = instance_place(x, new_y, obj_platform); //colliding with the platform at those coordinates
-		if(collidewith != noone){ //if the player collided with something! (cloud)
-			//only bounce on the cloud if not currently overlapping
-			if(place_meeting(x, y, collidewith) == false){ //if we collide with a cloud
+		if(collidewith != noone){ //if the player collided with something! (bush)
+			//only bounce on the bush if not currently overlapping
+			if(place_meeting(x, y, collidewith) == false){ //if we collide with a bush
 				//we collide then!
 				y_spd = jump_spd; //player jumps 
 				
