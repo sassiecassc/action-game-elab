@@ -66,7 +66,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "-6",
+            "value": "0",
             "varName": "y_spd",
             "varType": 0
         },
