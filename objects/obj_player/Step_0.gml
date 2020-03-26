@@ -11,9 +11,7 @@ y += y_spd;
 //accelerate from gravity; player can fall down
 y_spd += grav;
 
-if(place_meeting(x, y, obj_platform)){
-	y_spd = 0;
-}
+
 
 //collision with cloud
 var new_y;
@@ -29,14 +27,14 @@ if(y_spd > 0){ //if the player is moving down vertically (positive)
 				y_spd = jump_spd; //player jumps 
 				
 				
-				if(collidewith.object_index == obj_platform){ //if player collides with this object (cloud)
+				//if(collidewith.object_index == obj_platform){ //if player collides with this object (cloud)
 					//tell the platform to delete itself in 15 frames
-					if(collidewith.delete_me_in == 0){ //if countdown hit 0
-						collidewith.delete_me_in = 15; //set the timer back to 15
+					//if(collidewith.delete_me_in == 0){ //if countdown hit 0
+					//	collidewith.delete_me_in = 15; //set the timer back to 15
 						//audio_play_sound(snd_bounce, 1, 0);
-					}
+					//}
 					//alarm[0] = 30;
-				}
+				//}
 				break; //stop moving down
 			}
 		}
