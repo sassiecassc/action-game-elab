@@ -12,11 +12,55 @@ y += y_spd;
 y_spd += grav;
 
 
+//wall collision (screen borders)
+if(x < 20){ //left wall
+x = 20; //put them on the left wall
+x_spd = -1 * x_spd;
+}
+
+//wall collision (screen borders)
+if(x > room_width-40){ //right wall
+x = room_width-40 //put them on the right wall
+x_spd = -1 * x_spd;
+}
+
+
+//collision with bushes
 if(y_spd > 0){
 	if(place_meeting(x, y, obj_platform)){
 		y_spd = jump_spd;
 	}
 }
+
+//collision with other player
+if(x_spd > 0){
+	if(place_meeting(x, y, obj_player)){
+		x_spd *= -1;
+	}
+}
+
+/*
+//collision with other player
+if(y_spd > 0 and isFalling == false){
+	for(var dist_moved = 0; dist_moved < y_spd; dist_moved++){ //creating a for loop; dist_moved
+		new_y = y+dist_moved; //move 1 pixel at a time
+		var collidewith = instance_place(x, new_y, obj_player); //colliding with the player at those coordinates
+		if(collidewith != noone){ //if the player collided with the other player
+			//only bounce on the player if not currently overlapping
+			if(place_meeting(x, y, collidewith) == false){ //if we collide with a player
+				//we collide then!
+				collidewith.isFalling = true;
+				//global.myscore += 1;
+				y_spd = jump_spd; //player jumps 
+				audio_play_sound(snd_ko, 1, 0);
+				
+			}
+				break; //stop moving down
+			
+		}
+	}
+}
+
 
 /*
 //collision with bush
