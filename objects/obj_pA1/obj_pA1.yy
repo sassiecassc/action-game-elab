@@ -1,8 +1,8 @@
 {
-    "id": "d052785f-dda9-47be-b040-e79c8b43908d",
+    "id": "4ee9e732-b764-4694-88da-e55502ff7ce6",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_player",
+    "name": "obj_pA1",
     "eventList": [
         
     ],
