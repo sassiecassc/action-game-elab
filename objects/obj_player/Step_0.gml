@@ -12,6 +12,7 @@ y += y_spd;
 y_spd += grav;
 
 
+
 //wall collision (screen borders)
 if(x < 20){ //left wall
 x = 20; //put them on the left wall
@@ -32,12 +33,8 @@ if(y_spd > 0){
 	}
 }
 
-//collision with other player
-if(x_spd > 0){
-	if(place_meeting(x, y, obj_player)){
-		x_spd *= -1;
-	}
-}
+
+
 
 /*
 //collision with other player
@@ -97,3 +94,6 @@ else { // else player can't collide with cloud because we're not moving downward
 
 //set the new player y to a new y position
 y = new_y;
+*/
+
+
