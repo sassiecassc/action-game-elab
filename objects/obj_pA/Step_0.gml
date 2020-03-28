@@ -16,9 +16,34 @@ if(keyboard_check(vk_left)){
 
 
 //collision with other player ; this should only be on the sides not on top of players
-if(place_meeting(x, y, obj_pB)){
 	//one player should ricochet off the other player in the opposite direction
 	//while the other player should plummet to bottom of the screen
+if(keyboard_check(vk_left) and !player_collide){
+	x -= x_spd;
+	x_spd = 3;
+}
+
+//when collision happens set x speed, y speed to bounce. enter knockout mode
+if(place_meeting(x, y, obj_pB)){
+	y_spd = -15;
+	x_spd = -sign(x_spd) * 15;
+	player_collide = true;
+}
+
+//during knockout, increment x speed, y speed until they = 0; then exit knockout mode
+if(player_collide){
+	x += x_spd; //when keyboard controls are not running set x position, we need to make sure we are setting it here
+	if(y_spd < 0){
+		y_spd += 1;
+	} else {
+		y_spd += grav;
+	}
+	if(abs(x_spd) > 0){
+		x_spd -= sign(x_spd);
+	} else {
+		player_collide = false; // at this moment x_spd = 0
+		show_debug_message("exiting knockout");
+	}
 }
 
 

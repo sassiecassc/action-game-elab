@@ -13,10 +13,10 @@ if(keyboard_check(ord("D"))){
 }
 
 //collision with other player
-if(place_meeting(x, y, obj_pA)){
-	x += x_spd;
-	x_spd = 0;
-}
+//if(place_meeting(x, y, obj_pA)){
+//	x += x_spd;
+//	x_spd = 0;
+//}
 
 
 if(y_spd < 0){
