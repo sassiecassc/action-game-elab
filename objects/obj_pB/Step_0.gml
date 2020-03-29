@@ -1,22 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-x_spd = 3;
-
 if(keyboard_check(ord("A"))){
-	x -= x_spd;
+	x += x_spd * -1;
+	x_spd = 5;
 }
 
 if(keyboard_check(ord("D"))){
 	x += x_spd;
+	x_spd = 5;
 }
-
-//collision with other player
-//if(place_meeting(x, y, obj_pA)){
-//	x += x_spd;
-//	x_spd = 0;
-//}
 
 
 if(y_spd < 0){

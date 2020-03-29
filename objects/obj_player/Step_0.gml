@@ -11,7 +11,8 @@ y += y_spd;
 //accelerate from gravity; player can fall down
 y_spd += grav;
 
-
+//slow down player a little every frame to make it easier to control
+x_spd = x_spd * 0.9;
 
 //wall collision (screen borders)
 if(x < 20){ //left wall
@@ -36,27 +37,6 @@ if(y_spd > 0){
 
 
 
-/*
-//collision with other player
-if(y_spd > 0 and isFalling == false){
-	for(var dist_moved = 0; dist_moved < y_spd; dist_moved++){ //creating a for loop; dist_moved
-		new_y = y+dist_moved; //move 1 pixel at a time
-		var collidewith = instance_place(x, new_y, obj_player); //colliding with the player at those coordinates
-		if(collidewith != noone){ //if the player collided with the other player
-			//only bounce on the player if not currently overlapping
-			if(place_meeting(x, y, collidewith) == false){ //if we collide with a player
-				//we collide then!
-				collidewith.isFalling = true;
-				//global.myscore += 1;
-				y_spd = jump_spd; //player jumps 
-				audio_play_sound(snd_ko, 1, 0);
-				
-			}
-				break; //stop moving down
-			
-		}
-	}
-}
 
 
 /*
