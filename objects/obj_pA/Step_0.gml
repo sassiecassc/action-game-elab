@@ -25,14 +25,18 @@ if(place_meeting(x, y, obj_pB)){
 	player_collide = true;
 }
 
+//player can punch at any time buT if they are pressing down punch key AND colliding then a punch will count.
+
+if(keyboard_check(vk_space)){
+	sprite_index = spr_playerA_punch1;
+}
+
+
 //during knockout, increment x speed, y speed until they = 0; then exit knockout mode
-if(player_collide){
-//	if(keyboard_check(vk_down)){
-//		punching = true;
-//		if(punching == true){
-//			sprite_index = spr_playerA_punch1;
-//		}
-//	}
+if(player_collide and keyboard_check(vk_space)){
+	punching = true;
+	if(punching == true){
+		sprite_index = spr_playerA_punch1;
 	x += x_spd; //when keyboard controls are not running set x position, we need to make sure we are setting it here
 	if(y_spd < 0){
 		y_spd += 1;
@@ -45,6 +49,7 @@ if(player_collide){
 		player_collide = false; // at this moment x_spd = 0
 		show_debug_message("exiting knockout");
 	}
+}
 }
 	punching = false;
 
