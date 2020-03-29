@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 //player controls
-if(keyboard_check(vk_left)){
+if(keyboard_check(vk_left) and !player_collide){
 	x -= x_spd;
 	x_spd = 5;
-} else if(keyboard_check(vk_right)){
+} else if(keyboard_check(vk_right) and !player_collide){
 	x += x_spd;
 	x_spd = 5;
 } else {
@@ -14,19 +14,14 @@ if(keyboard_check(vk_left)){
 
 
 
-
 //collision with other player ; this should only be on the sides not on top of players
 	//one player should ricochet off the other player in the opposite direction
 	//while the other player should plummet to bottom of the screen
-if(keyboard_check(vk_left) and !player_collide){
-	x -= x_spd;
-	x_spd = 3;
-}
 
 //when collision happens set x speed, y speed to bounce. enter knockout mode
 if(place_meeting(x, y, obj_pB)){
-	y_spd = -15;
-	x_spd = -sign(x_spd) * 15;
+	y_spd = -10;
+	x_spd = -sign(x_spd) * 10;
 	player_collide = true;
 }
 
@@ -47,13 +42,17 @@ if(player_collide){
 }
 
 
+
 //animations
-if(y_spd < 0){
+if(y_spd < 0 and !punching){
 	sprite_index = spr_playerA_up;
-} else if(y_spd > 0){
-	sprite_index = spr_playerA_down;
-} else {
-	sprite_index = spr_playerA;
+//} else if(y_spd > 0){
+	//sprite_index = spr_playerA_down;
+}
+if(y_spd < 0 and keyboard_check(vk_space)){
+	punching = true;
+	sprite_index = spr_playerA_punch1;
+	punching = false;
 }
 
 event_inherited();
