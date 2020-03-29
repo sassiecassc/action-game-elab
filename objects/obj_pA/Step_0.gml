@@ -27,6 +27,12 @@ if(place_meeting(x, y, obj_pB)){
 
 //during knockout, increment x speed, y speed until they = 0; then exit knockout mode
 if(player_collide){
+//	if(keyboard_check(vk_down)){
+//		punching = true;
+//		if(punching == true){
+//			sprite_index = spr_playerA_punch1;
+//		}
+//	}
 	x += x_spd; //when keyboard controls are not running set x position, we need to make sure we are setting it here
 	if(y_spd < 0){
 		y_spd += 1;
@@ -40,7 +46,7 @@ if(player_collide){
 		show_debug_message("exiting knockout");
 	}
 }
-
+	punching = false;
 
 
 //animations
@@ -49,10 +55,8 @@ if(y_spd < 0 and !punching){
 //} else if(y_spd > 0){
 	//sprite_index = spr_playerA_down;
 }
-if(y_spd < 0 and keyboard_check(vk_space)){
-	punching = true;
-	sprite_index = spr_playerA_punch1;
-	punching = false;
-}
+//if(y_spd < 0 and keyboard_check(vk_down)){
+//	punching = true;
+//}
 
 event_inherited();
