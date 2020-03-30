@@ -16,13 +16,6 @@ y_spd += grav;
 //slow down player a little every frame to make it easier to control
 x_spd = x_spd * 0.9;
 
-//collision with bushes
-if(y_spd > 0){
-	if(place_meeting(x, y, obj_platform)){
-		y_spd = jump_spd;
-	}
-}
-
 
 
 //wall collision (screen borders)
@@ -37,14 +30,14 @@ x = room_width-40 //put them on the right wall
 x_spd = -1 * x_spd;
 }
 
-/*
+
 //collision with bushes
 if(y_spd > 0){
-	if(place_meeting(x, y, obj_platform)){
+	if(place_meeting(x, y, obj_platform) and !knocked_out){
 		y_spd = jump_spd;
-	}
+	} 
 }
-*/
+
 
 
 
