@@ -181,6 +181,20 @@
             "value": "60",
             "varName": "respawn_timer",
             "varType": 0
+        },
+        {
+            "id": "4e458561-a846-4e17-b739-05dcc8c3e181",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "controls_enabled",
+            "varType": 3
         }
     ],
     "solid": false,

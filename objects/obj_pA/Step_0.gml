@@ -3,18 +3,24 @@
 
 
 //player controls
-if(keyboard_check(vk_left)){ //if the player is pressing left
+if(keyboard_check(vk_left) and controls_enabled){ //if the player is pressing left and controls_enabled is true
 	//then subtracting x_spd and move left
 	x_spd -= 0.4;
-} else if(keyboard_check(vk_right)){ //if the player is pressing right
+} else if(keyboard_check(vk_right) and controls_enabled){ //if the player is pressing right and controls_enabled is true
 	x += x_spd; //then add x_spd and move right
 	x_spd += 0.4;
-} else { //else then don't move left or right
+} else { //else slow down a bit
 	x_spd *= 0.95;
 }
 //use speed to set position
 x += x_spd;
 	
+	
+//as long as the stun_timer is still going (greater than 0) then 
+//players should not be able to move left or right
+//if(controls_enabled == false){ //player should not be able to use controls
+	
+//}
 	
 //reference to the other player so i can knock them away
 var otherplayer = obj_pA; //get first instance of player A in the scene
@@ -29,16 +35,16 @@ if(place_meeting(x, y, otherplayer)){
 	player_collide = false;
 }
 
+
 //setting what happens when two players collide
-if(player_collide == true){
-	if(stun_timer > 0){
+if(player_collide == true){ 
+	if(stun_timer > 0){ //if stun timer is greater than 0 then start the timer
 		stun_timer -= 1;
-		if(keyboard_check(vk_left) or (keyboard_check(vk_right))){
-			x += x_spd;
-			x_spd = 0;
-		}
-		if(stun_timer <= 0){
-			stun_timer = 20;
+		controls_enabled = false;
+		
+		if(stun_timer <= 0){ //if timer hits 0 then
+			stun_timer = 20; //set timer back to 20
+			controls_enabled = true;
 		}
 	}
 	

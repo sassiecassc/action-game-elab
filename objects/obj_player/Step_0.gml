@@ -49,7 +49,7 @@ if(y_spd > 0){ //if player is moving down
 
 
 if(respawn == true){
-	y_spd = jump_spd * 1.5; //this is condition of respawn = true;
+	y_spd = jump_spd * 1.25; //this is condition of respawn = true;
 }
 
 if(place_meeting(x, y, obj_floor)){
@@ -70,3 +70,10 @@ if(place_meeting(x, y, obj_floor)){
 		knocked_out = false;
 	}
 
+
+//collision with ceiling
+if(y <= 0){ //if player is moving up
+	if(place_meeting(x, y, obj_ceiling)){
+		y_spd = -jump_spd;
+	}
+}
