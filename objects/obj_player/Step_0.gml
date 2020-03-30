@@ -34,8 +34,13 @@ x_spd = -1 * x_spd;
 //collision with bushes
 if(y_spd > 0){ //if player is moving down
 	if(place_meeting(x, y, obj_platform) and !knocked_out and !respawn){ //and if it overlaps the bush and the player hasn't been knocked out
-		//then have the player bounce back up
-		y_spd = jump_spd;
+		var bush = instance_place(x, y, obj_platform);
+		if(bush.bush_hp > 0){ //if this specific bush's hp is greater than 5
+			bush.bush_hp -= 1; //then subtract one after colliding with it
+			
+			//then have the player bounce back up if the bush is "alive"
+			y_spd = jump_spd;
+		}	
 	} 
 }
 

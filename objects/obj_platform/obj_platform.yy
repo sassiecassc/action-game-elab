@@ -43,7 +43,35 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "6a6e7c79-46ce-4ce4-a01c-58dc4b67e43f",
+            "id": "2adeab7a-1380-4b4f-9ede-0f0d78842343",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "5",
+            "varName": "bush_hp",
+            "varType": 0
+        },
+        {
+            "id": "d3225f62-e4ce-461a-80c3-58822d2b51ce",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "200",
+            "varName": "hp_timer",
+            "varType": 0
+        },
+        {
+            "id": "74574069-72a3-4906-a9cc-98ab288b3edc",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -53,8 +81,8 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
-            "varName": "delete_me_in",
-            "varType": 0
+            "varName": "start_animation",
+            "varType": 3
         }
     ],
     "solid": false,

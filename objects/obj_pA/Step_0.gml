@@ -87,6 +87,7 @@ if(knocked_out == true){
 }
 
 
+
 //ready to do something with this punching variable and the player collide variable
 if(punching == true) and (player_collide){
 	show_debug_message("punching and colliding");
@@ -99,6 +100,10 @@ if(punching == true) and (player_collide){
 	} else { //else i must be to the left of the other player
 		x_spd = -15; //ricochet to the left
 		//otherplayer.x_spd = 7; //other player ricochets faster to the right
+	}
+	
+	if(otherplayer.knocked_out == false){ //only add score once
+		score_A += 1;
 	}
 	
 	//tell the other player to be knocked out
