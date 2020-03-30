@@ -59,7 +59,9 @@ if(player_collide == true){
 
 
 //player can punch at any time buT if they are pressing down punch key AND colliding then a punch will count.
-
+if(keyboard_check(vk_space) == false){
+	punching = false;
+}
 if(keyboard_check(vk_space)){
 	sprite_index = spr_playerA_punch1; //switch to punching sprite
 	punching = true;
