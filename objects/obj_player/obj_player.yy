@@ -153,6 +153,34 @@
             "value": "20",
             "varName": "stun_timer",
             "varType": 0
+        },
+        {
+            "id": "dcb5dcad-9ae7-417d-8299-338609bd826b",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "respawn",
+            "varType": 3
+        },
+        {
+            "id": "3e41d343-3503-42e5-bdba-f173bf1194ad",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "60",
+            "varName": "respawn_timer",
+            "varType": 0
         }
     ],
     "solid": false,

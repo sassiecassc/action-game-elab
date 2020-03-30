@@ -84,7 +84,6 @@ if(knocked_out == true){
 	}
 	//this would plummet the other character
 	otherplayer.y_spd = 8;
-	//collision with bushes don't work anymore NEED TO FIGURE THAT OUT
 }
 
 
