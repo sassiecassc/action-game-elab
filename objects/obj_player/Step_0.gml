@@ -4,6 +4,7 @@
 image_xscale = 3.25;
 image_yscale = 3.25;
 
+
 //change x pos of player using spd variable
 //x += x_spd;
 y += y_spd;
@@ -11,8 +12,18 @@ y += y_spd;
 //accelerate from gravity; player can fall down
 y_spd += grav;
 
+
 //slow down player a little every frame to make it easier to control
 x_spd = x_spd * 0.9;
+
+//collision with bushes
+if(y_spd > 0){
+	if(place_meeting(x, y, obj_platform)){
+		y_spd = jump_spd;
+	}
+}
+
+
 
 //wall collision (screen borders)
 if(x < 20){ //left wall
@@ -26,14 +37,14 @@ x = room_width-40 //put them on the right wall
 x_spd = -1 * x_spd;
 }
 
-
+/*
 //collision with bushes
 if(y_spd > 0){
 	if(place_meeting(x, y, obj_platform)){
 		y_spd = jump_spd;
 	}
 }
-
+*/
 
 
 

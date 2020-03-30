@@ -1,42 +1,61 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//player controls
-if(keyboard_check(vk_left) and !player_collide){
-	x += x_spd * -1;
-	x_spd = 5;
-} else if(keyboard_check(vk_right) and !player_collide){
-	x += x_spd;
-	x_spd = 5;
-} else {
-	x_spd = 0;
-}
 
+//player controls
+if(keyboard_check(vk_left)){ //if the player is pressing left
+	//then subtracting x_spd and move left
+	x_spd -= 0.4;
+} else if(keyboard_check(vk_right)){ //if the player is pressing right
+	x += x_spd; //then add x_spd and move right
+	x_spd += 0.4;
+} else { //else then don't move left or right
+	x_spd *= 0.95;
+}
+//use speed to set position
+x += x_spd;
+	
+	
 //reference to the other player so i can knock them away
 var otherplayer = obj_pA; //get first instance of player A in the scene
 if(object_index == obj_pA){ //im player A
 	otherplayer = obj_pB; //then player B is other player
 }
 
-//collision with other player ; this should only be on the sides not on top of players
-//one player should ricochet off the other player in the opposite direction
-//while the other player should plummet to bottom of the screen
-if(place_meeting(x, y, obj_pB)){
+//collision with other player = small bounce away from each other in opposite directions
+if(place_meeting(x, y, otherplayer)){
 	player_collide = true;
-	if(player_collide == true){
+}  else {
+	player_collide = false;
+}
 
-	} else {
-		player_collide = false;
+//setting what happens when two players collide
+if(player_collide == true){
+	if(stun_timer > 0){
+		stun_timer -= 1;
+		if(keyboard_check(vk_left) or (keyboard_check(vk_right))){
+			x += x_spd;
+			x_spd = 0;
+		}
+		if(stun_timer <= 0){
+			stun_timer = 20;
+		}
+	}
+	
+	
+	if(x > otherplayer.x){ //to the right of other player and moving left
+		x_spd = 8; //move right
+		y_spd = -8; //shoot player up
+		otherplayer.x_spd = -8; //move left
+		otherplayer.y_spd = -8; //shoot player up
+	} else if(x < otherplayer.x){ //to the left of the other player and moving right
+		x_spd = -8; //move left
+		y_spd = -8; //shoot player up
+		otherplayer.x_spd = 8; //move left
+		otherplayer.y_spd = -8; //shoot player up
 	}
 }
 
-//if other player has been collided with and punched then knocked_out is true
-if(knocked_out == true){
-	//this would plummet the other character
-	otherplayer.y_spd = 6;
-	//other player cannot move side to side
-	otherplayer.x_spd = 0;
-}
 
 
 //player can punch at any time buT if they are pressing down punch key AND colliding then a punch will count.
@@ -53,22 +72,40 @@ if(keyboard_check(vk_space)){
 }
 
 
+//if other player has been collided with and punched then knocked_out is true
+if(knocked_out == true){
+	if(stun_timer > 0){
+		stun_timer -= 1;
+		//other player cannot move side to side
+		if(keyboard_check(ord("A")) or (keyboard_check(ord("D")))){
+			otherplayer.x += otherplayer.x_spd;
+			otherplayer.x_spd = 0;
+		}
+	}
+	//this would plummet the other character
+	otherplayer.y_spd = 8;
+	//collision with bushes don't work anymore NEED TO FIGURE THAT OUT
+}
+
+
 //ready to do something with this punching variable and the player collide variable
 if(punching == true) and (player_collide){
+	show_debug_message("punching and colliding");
 	//if im punching AND touching the other player, then
 	//knock the palyers away from each other by changing their speeds
 	if(x > otherplayer.x){ //if im to the right of the other player when we collide
 		//then ricochet to the right
-		x_spd = 5;
-		otherplayer.x_spd = -7; // other player ricochets faster to the left
+		x_spd = 15;
+		//otherplayer.x_spd = -7; // other player ricochets faster to the left
 	} else { //else i must be to the left of the other player
-		x_spd = -5; //ricochet to the left
-		otherplayer.x_spd = 7; //other player ricochets faster to the right
+		x_spd = -15; //ricochet to the left
+		//otherplayer.x_spd = 7; //other player ricochets faster to the right
 	}
 	
 	//tell the other player to be knocked out
 	otherplayer.knocked_out = true;
 }
+
 
 
 //animations

@@ -99,20 +99,6 @@
             "varType": 0
         },
         {
-            "id": "f2a19b36-8c86-4e51-ba26-477cc07c1a7a",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0.9",
-            "varName": "x_accel",
-            "varType": 0
-        },
-        {
             "id": "f66774e0-14ec-4a9a-8330-e292f455d9a7",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -153,6 +139,20 @@
             "value": "0",
             "varName": "knocked_out",
             "varType": 3
+        },
+        {
+            "id": "08245e82-07eb-4f7f-b1dc-b8ba51e078c2",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "20",
+            "varName": "stun_timer",
+            "varType": 0
         }
     ],
     "solid": false,
