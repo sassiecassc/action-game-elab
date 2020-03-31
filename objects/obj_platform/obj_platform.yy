@@ -83,6 +83,20 @@
             "value": "0",
             "varName": "start_animation",
             "varType": 3
+        },
+        {
+            "id": "f1db48cd-3c7f-43c3-b989-e690912fa722",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "damaged_bush",
+            "varType": 3
         }
     ],
     "solid": false,

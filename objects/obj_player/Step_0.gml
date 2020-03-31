@@ -31,7 +31,9 @@ x_spd = -1 * x_spd;
 }
 
 
+
 //collision with bushes
+//when player bounces on bush, damage animation should play; should play after colliding and play fully 
 if(y_spd > 0){ //if player is moving down
 	if(place_meeting(x, y, obj_platform) and !knocked_out and !respawn){ //and if it overlaps the bush and the player hasn't been knocked out
 		var bush = instance_place(x, y, obj_platform);
@@ -40,9 +42,11 @@ if(y_spd > 0){ //if player is moving down
 			
 			//then have the player bounce back up if the bush is "alive"
 			y_spd = jump_spd;
-		}	
-	} 
+			bush.damaged_bush = true;
+		} 
+	}
 }
+
 
 //collision with floor after being knocked out; respawn player
 //bool respawn pertains to after player is knocked out so it should include being shot back up but not the timer?
