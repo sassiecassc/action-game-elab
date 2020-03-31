@@ -4,7 +4,7 @@
 //player controls
 if(keyboard_check(ord("A")) and controls_enabled){ //if the player is pressing left and controls_enabled is true
 	//subtract x_spd and move left
-	x_spd -= 0.4;;
+	x_spd -= 0.4;
 } else if(keyboard_check(ord("D")) and controls_enabled){ //if the player is pressing right and controls_enabled is true
 	//add x_spd and move right
 	x_spd += x_spd;
@@ -74,10 +74,10 @@ if(player_collide == true){
 
 
 //player can punch at any time buT if they are pressing down punch key AND colliding then a punch will count.
-if(keyboard_check(vk_space) == false){
+if(keyboard_check(ord("S")) == false){
 	punching = false;
 }
-if(keyboard_check(vk_space)){
+if(keyboard_check(ord("S"))){
 	sprite_index = spr_playerB_punch1; //switch to punching sprite
 	punching = true;
 } else if(y_spd < 0){ //if not pressing space key and is moving up then 
