@@ -3,10 +3,10 @@
 
 
 //player controls
-if(keyboard_check(vk_left) and controls_enabled){ //if the player is pressing left and controls_enabled is true
+if(keyboard_check(vk_left) and controls_enabled and knocked_out == false){ //if the player is pressing left and controls_enabled is true
 	//then subtracting x_spd and move left
 	x_spd -= 0.4;
-} else if(keyboard_check(vk_right) and controls_enabled){ //if the player is pressing right and controls_enabled is true
+} else if(keyboard_check(vk_right) and controls_enabled and knocked_out == false){ //if the player is pressing right and controls_enabled is true
 	x += x_spd; //then add x_spd and move right
 	x_spd += 0.4;
 } else { //else slow down a bit
@@ -31,8 +31,6 @@ if(object_index == obj_pA){ //im player A
 //collision with other player = small bounce away from each other in opposite directions
 if(place_meeting(x, y, otherplayer)){
 	player_collide = true;
-}  else {
-	player_collide = false;
 }
 
 
@@ -43,8 +41,9 @@ if(player_collide == true){
 		controls_enabled = false;
 		
 		if(stun_timer <= 0){ //if timer hits 0 then
-			stun_timer = 20; //set timer back to 20
+			stun_timer = 10; //set timer back to 10
 			controls_enabled = true;
+			player_collide = false;
 		}
 	}
 	
@@ -81,7 +80,8 @@ if(keyboard_check(vk_down)){
 
 
 //if other player has been collided with and punched then knocked_out is true
-if(knocked_out == true){
+/*
+if(otherplayer.knocked_out == true){
 	if(stun_timer > 0){
 		stun_timer -= 1;
 		//other player cannot move side to side
@@ -93,7 +93,7 @@ if(knocked_out == true){
 	//this would plummet the other character
 	otherplayer.y_spd = 8;
 }
-
+*/
 
 
 //ready to do something with this punching variable and the player collide variable
